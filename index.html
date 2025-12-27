@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISOatlas: El Directorio de Sistemas Operativos</title>
+    <meta name="description" content="Descubre páginas para descargar ISOs de sistemas operativos. ISOatlas es tu guía completa para distribuciones oficiales.">
+    <meta name="author" content="Javier Bravo">
+    <link rel="icon" type="image/png" href="multimedia/icono.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Menú de navegación fijo -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#inicio" class="logo">
+                <img src="multimedia/logo.svg" alt="ISOatlas Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sistemas-operativos">Sistemas Operativos</a></li>
+                <li><a href="#herramientas">Herramientas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1 data-i18n="hero-title">Bienvenido a ISOatlas</h1>
+            <p data-i18n="hero-subtitle">El directorio completo para descargar ISOs de sistemas operativos</p>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar sistemas operativos..." data-i18n="search-placeholder">
+                <button type="submit" data-i18n="search-button">Buscar</button>
+            </div>
+            <div class="highlights">
+                <div class="highlight-item">
+                    <h3 data-i18n="highlight1-title">Descargas Oficiales</h3>
+                    <p data-i18n="highlight1-desc">Enlaces directos a fuentes oficiales</p>
+                </div>
+                <div class="highlight-item">
+                    <h3 data-i18n="highlight2-title">Actualizado</h3>
+                    <p data-i18n="highlight2-desc">Información siempre al día</p>
+                </div>
+                <div class="highlight-item">
+                    <h3 data-i18n="highlight3-title">Fácil de Usar</h3>
+                    <p data-i18n="highlight3-desc">Interfaz intuitiva y rápida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sistemas Operativos -->
+    <section id="sistemas-operativos" class="os-section">
+        <div class="container">
+            <h2 data-i18n="os-title">Sistemas Operativos</h2>
+            <div class="os-grid">
+                <div class="os-item">
+                    <img src="multimedia/windows.png" alt="Windows" class="os-icon">
+                    <h3>Windows</h3>
+                    <p data-i18n="windows-desc">Descarga las últimas versiones de Windows desde Microsoft.</p>
+                    <a href="#" class="btn-primary" data-i18n="download">Descargar</a>
+                </div>
+                <div class="os-item">
+                    <img src="multimedia/linux.png" alt="Linux" class="os-icon">
+                    <h3>Linux</h3>
+                    <p data-i18n="linux-desc">Distribuciones populares como Ubuntu, Fedora y más.</p>
+                    <a href="#" class="btn-primary" data-i18n="download">Descargar</a>
+                </div>
+                <div class="os-item">
+                    <img src="multimedia/macos.png" alt="macOS" class="os-icon">
+                    <h3>macOS</h3>
+                    <p data-i18n="macos-desc">Versiones oficiales de macOS para Mac.</p>
+                    <a href="#" class="btn-primary" data-i18n="download">Descargar</a>
+                </div>
+                <!-- Más items según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Herramientas -->
+    <section id="herramientas" class="tools-section">
+        <div class="container">
+            <h2 data-i18n="tools-title">Herramientas</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <img src="multimedia/rufus.png" alt="Rufus" class="tool-icon">
+                    <h3>Rufus</h3>
+                    <p data-i18n="rufus-desc">Crea USB bootables de manera rápida y sencilla.</p>
+                    <a href="#" class="btn-secondary" data-i18n="download">Descargar</a>
+                </div>
+                <div class="tool-item">
+                    <img src="multimedia/ventoy.png" alt="Ventoy" class="tool-icon">
+                    <h3>Ventoy</h3>
+                    <p data-i18n="ventoy-desc">Herramienta para crear USB multiboot.</p>
+                    <a href="#" class="btn-secondary" data-i18n="download">Descargar</a>
+                </div>
+                <div class="tool-item">
+                    <img src="multimedia/cody.png" alt="Cody" class="tool-icon">
+                    <h3>Cody</h3>
+                    <p data-i18n="cody-desc">Herramienta para gestión de ISOs.</p>
+                    <a href="#" class="btn-secondary" data-i18n="download">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 data-i18n="contact-title">Contacto</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Nombre" data-i18n="name-placeholder" required>
+                <input type="email" name="email" placeholder="Email" data-i18n="email-placeholder" required>
+                <textarea name="message" placeholder="Mensaje" data-i18n="message-placeholder" required></textarea>
+                <button type="submit" class="btn-primary" data-i18n="send">Enviar</button>
+            </form>
+            <div class="social-links">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer-text">&copy; 2023 ISOatlas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
