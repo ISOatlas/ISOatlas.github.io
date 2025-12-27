@@ -49,6 +49,7 @@ body {
 
 .logo img {
   height: 70px;
+  width: auto;
 }
 
 .nav-menu {
