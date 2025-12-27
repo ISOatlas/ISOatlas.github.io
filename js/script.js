@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Funcionalidad de búsqueda próximamente disponible.');
     });
 
-    // Formulario de contacto con Formspree y almacenamiento local
+    // Formulario de contacto con Netlify y almacenamiento local
     const contactForm = document.querySelector('.contact-form');
     contactForm.addEventListener('submit', function(e) {
-        // No prevenir envío a Formspree, pero almacenar localmente
+        // Almacenar localmente antes del envío a Netlify
         const formData = new FormData(this);
         const notification = {
             name: formData.get('name'),
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         notifications.push(notification);
         localStorage.setItem('notifications', JSON.stringify(notifications));
 
-        // Mostrar mensaje de éxito (Formspree manejará el envío por email)
+        // Mostrar mensaje de éxito (Netlify manejará el envío)
         alert('Mensaje enviado. Gracias por contactar.');
-        this.reset();
+        // No resetear el form aquí, Netlify lo hará después del envío
     });
 });
