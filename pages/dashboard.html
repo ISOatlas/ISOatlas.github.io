@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ISOatlas</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../multimedia/logo.svg" alt="ISOatlas Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <h2>Bandeja de Notificaciones</h2>
+            <div id="notifications-container">
+                <!-- Notifications will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check if logged in
+        if (localStorage.getItem('loggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Load notifications
+        const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+        const container = document.getElementById('notifications-container');
+
+        if (notifications.length === 0) {
+            container.innerHTML = '<p>No hay notificaciones.</p>';
+        } else {
+            notifications.reverse().forEach(notification => {
+                const item = document.createElement('div');
+                item.className = 'notification-item';
+                item.innerHTML = `
+                    <h3>${notification.name} (${notification.email})</h3>
+                    <p>${notification.message}</p>
+                    <small>${new Date(notification.timestamp).toLocaleString()}</small>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        // Logout
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('loggedIn');
+            window.location.href = '../index.html';
+        });
+    </script>
+</body>
+</html>

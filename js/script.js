@@ -35,10 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Funcionalidad de búsqueda próximamente disponible.');
     });
 
-    // Placeholder para formulario de contacto
+    // Formulario de contacto con Formspree y almacenamiento local
     const contactForm = document.querySelector('.contact-form');
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // No prevenir envío a Formspree, pero almacenar localmente
+        const formData = new FormData(this);
+        const notification = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+            timestamp: new Date().toISOString()
+        };
+
+        // Almacenar en localStorage
+        const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+        notifications.push(notification);
+        localStorage.setItem('notifications', JSON.stringify(notifications));
+
+        // Mostrar mensaje de éxito (Formspree manejará el envío por email)
         alert('Mensaje enviado. Gracias por contactar.');
         this.reset();
     });
