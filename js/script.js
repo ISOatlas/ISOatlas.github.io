@@ -35,25 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Funcionalidad de búsqueda próximamente disponible.');
     });
 
-    // Formulario de contacto con Netlify y almacenamiento local
+    // Formulario de contacto con Netlify
     const contactForm = document.querySelector('.contact-form');
     contactForm.addEventListener('submit', function(e) {
-        // Almacenar localmente antes del envío a Netlify
-        const formData = new FormData(this);
-        const notification = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message'),
-            timestamp: new Date().toISOString()
-        };
-
-        // Almacenar en localStorage
-        const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
-        notifications.push(notification);
-        localStorage.setItem('notifications', JSON.stringify(notifications));
-
         // Mostrar mensaje de éxito (Netlify manejará el envío)
         alert('Mensaje enviado. Gracias por contactar.');
-        // No resetear el form aquí, Netlify lo hará después del envío
+        // Netlify reseteará el form después del envío
     });
 });
